@@ -3,6 +3,7 @@ package com.gyros.dagger2login.di;
 import com.gyros.dagger2login.di.auth.AuthModule;
 import com.gyros.dagger2login.di.auth.AuthViewModelsModule;
 import com.gyros.dagger2login.ui.auth.AuthActivity;
+import com.gyros.dagger2login.ui.main.MainActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -17,6 +18,9 @@ public abstract class ActivityBuildersModule {
             }
     )
     abstract AuthActivity contributeAuthActivity();
+
+    @ContributesAndroidInjector
+    abstract MainActivity contributeMainActivity();
 
 
 
