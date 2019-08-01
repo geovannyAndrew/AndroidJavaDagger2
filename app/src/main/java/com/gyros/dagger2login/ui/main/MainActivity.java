@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 
 import com.gyros.dagger2login.BaseActivity;
 import com.gyros.dagger2login.R;
+import com.gyros.dagger2login.ui.main.profile.ProfileFragment;
 
 public class MainActivity extends BaseActivity {
 
@@ -18,6 +19,13 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        testFragment();
+    }
+
+    private void testFragment(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.mainContainer,new ProfileFragment())
+                .commit();
     }
 
     @Override
