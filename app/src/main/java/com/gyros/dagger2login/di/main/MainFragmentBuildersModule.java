@@ -1,5 +1,6 @@
 package com.gyros.dagger2login.di.main;
 
+import com.gyros.dagger2login.ui.main.posts.PostsFragment;
 import com.gyros.dagger2login.ui.main.profile.ProfileFragment;
 
 import dagger.Module;
@@ -10,4 +11,7 @@ public abstract class MainFragmentBuildersModule {
 
     @ContributesAndroidInjector
     abstract ProfileFragment contributeProfileFragment();
+
+    @ContributesAndroidInjector
+    abstract PostsFragment contributePostFragment();
 }
