@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestOptions;
 import com.gyros.dagger2login.R;
+import com.gyros.dagger2login.models.User;
 import com.gyros.dagger2login.utils.Constants;
 
 import javax.inject.Named;
@@ -52,5 +53,12 @@ public class AppModule {
     @Provides
     static Drawable provideAppDrawable(Application application){
         return ContextCompat.getDrawable(application,R.drawable.logo);
+    }
+
+    @Singleton
+    @Provides
+    @Named("app_user")
+    static User provideUser(){
+        return new User();
     }
 }

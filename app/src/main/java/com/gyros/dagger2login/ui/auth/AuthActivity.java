@@ -21,6 +21,7 @@ import com.gyros.dagger2login.ui.main.MainActivity;
 import com.gyros.dagger2login.viewmodels.ViewModelProviderFactory;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import dagger.android.support.DaggerAppCompatActivity;
 
@@ -42,6 +43,14 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
     @Inject
     RequestManager requestManager;
 
+    @Inject
+    @Named("auth_user")
+    User userAuth;
+
+    @Inject
+    @Named("app_user")
+    User userApp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +62,9 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
 
         setLogo();
         subscribeObservers();
+
+        Log.d(TAG, "onCreate: user auth "+userAuth);
+        Log.d(TAG, "onCreate: user app "+userApp);
     }
 
 
